@@ -24,9 +24,11 @@ const iotdata = new AWS.IotData({
 
 let AlexaResponse = require("./alexa/skills/smarthome/AlexaResponse");
 const { decodeToken } = require('./auth');
-// If you have your own global account
+
+// If you don't have your own global account, use the code below.
 const ddb = new AWS.DynamoDB.DocumentClient({ region: process.env.AWS_REGION || 'us-east-1' });
-const ddb = new AWS.DynamoDB.DocumentClient({ accessKeyId: 'xxxxxxxxxxxxx', secretAccessKey: 'xxxxxxxxxxxxxxxxxxxxx', region: 'us-east-1' });
+// If you have your own global account, use the code below.
+// const ddb = new AWS.DynamoDB.DocumentClient({ accessKeyId: 'xxxxxxxxxxxxx', secretAccessKey: 'xxxxxxxxxxxxxxxxxxxxx', region: 'us-east-1' });
 
 exports.handler = async function (event, context) {
 
